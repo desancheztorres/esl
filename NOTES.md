@@ -1,0 +1,5 @@
+- make composer/require module=stof/doctrine-extensions-bundle
+- make composer/require module=symfony/orm-pack
+- composer require --dev symfony/maker-bundle --ignore-platform-reqs
+- make composer/require module=ramsey/uuid-doctrine
+- make composer/require module=ramsey/uuid
