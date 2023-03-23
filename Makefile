@@ -2,6 +2,7 @@
 current-dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 SHELL = /bin/sh
 RUN_PHP := docker-compose exec php
+RUN_SYMFONY := $(RUN_PHP) bin/console
 
 start:
 	@docker-compose up -d
@@ -15,16 +16,19 @@ rebuild:
 	@docker-compose up -d --build
 
 exec:
-	@docker-compose exec php sh
+	@docker-compose exec -u cristian php sh
 
 .PHONY: build
 build: composer/install
 
-composer/install: ACTION=install --ignore-platform-reqs
+composer/install: ACTION=install
 composer/update: ACTION=update
 composer/require: ACTION=require $(module)
 composer composer/install composer/update composer/require:
-	$(RUN_PHP) composer $(ACTION)
+	$(RUN_PHP) composer $(ACTION) --ignore-platform-reqs
+
+make/entity:
+	$(RUN_SYMFONY) make:entity
 
 phpstan:
 	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g
