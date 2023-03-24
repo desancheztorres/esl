@@ -3,3 +3,4 @@
 - composer require --dev symfony/maker-bundle --ignore-platform-reqs
 - make composer/require module=ramsey/uuid-doctrine
 - make composer/require module=ramsey/uuid
+- composer require friends-of-behat/mink-extension friends-of-behat/mink-browserkit-driver friends-of-behat/symfony-extension --dev
