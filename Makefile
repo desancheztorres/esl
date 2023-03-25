@@ -16,7 +16,7 @@ rebuild:
 	@docker-compose up -d --build
 
 exec:
-	@docker-compose exec -u cristian php sh
+	@docker-compose exec php sh
 
 .PHONY: build
 build: composer/install
@@ -29,6 +29,12 @@ composer composer/install composer/update composer/require:
 
 make/entity:
 	$(RUN_SYMFONY) make:entity
+
+migration:
+	$(RUN_SYMFONY) make:migration
+
+migrate:
+	$(RUN_SYMFONY) doctrine:migrations:migrate
 
 phpstan:
 	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g

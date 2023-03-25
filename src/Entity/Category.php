@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Category
 {
     #[ORM\Id]
-    #[ORM\Column(type: "char", length: 36, unique: true)]
+    #[ORM\Column(type: "string", length: 36, unique: true)]
     private ?string $id = null;
 
     #[ORM\Column(length: 255)]
@@ -27,6 +27,13 @@ class Category
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getErpId(): ?string
