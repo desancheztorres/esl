@@ -19,8 +19,10 @@
         "stof/doctrine-extensions-bundle": "^1.7",
         "symfony/console": "6.1.*",
         "symfony/dotenv": "6.1.*",
+        "symfony/finder": "6.1.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.1.*",
+        "symfony/messenger": "6.1.*",
         "symfony/runtime": "6.1.*",
         "symfony/yaml": "6.1.*"
     },
@@ -48,12 +50,13 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Arcmedia\\Esl\\": "src/Esl",
+            "Arcmedia\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Arcmedia\\Tests\\": "tests/"
         }
     },
     "replace": {
