@@ -27,6 +27,12 @@ composer/require: ACTION=require $(module)
 composer composer/install composer/update composer/require:
 	$(RUN_PHP) composer $(ACTION) --ignore-platform-reqs
 
+cache/clear:
+	@$(RUN_SYMFONY) cache:clear
+
+autoload:
+	$(RUN_PHP) composer dumpautoload
+
 make/entity:
 	$(RUN_SYMFONY) make:entity
 
@@ -35,6 +41,12 @@ migration:
 
 migrate:
 	$(RUN_SYMFONY) doctrine:migrations:migrate
+
+schema/create:
+	$(RUN_SYMFONY) doctrine:schema:create
+
+schema/update:
+	$(RUN_SYMFONY) doctrine:schema:update --force
 
 phpstan:
 	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g

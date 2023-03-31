@@ -4,3 +4,7 @@
 - make composer/require module=ramsey/uuid-doctrine
 - make composer/require module=ramsey/uuid
 - composer require friends-of-behat/mink-extension friends-of-behat/mink-browserkit-driver friends-of-behat/symfony-extension --dev
+- composer require phpoffice/phpspreadsheet
+- make composer/require module=messenger
+- bin/console debug:autowiring mess
+- bin/console debug:messenger
