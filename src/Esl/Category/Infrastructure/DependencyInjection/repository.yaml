@@ -1,0 +1,8 @@
+services:
+  category.repository.inMemoryCategoryRepository:
+    class: Arcmedia\Esl\Category\Infrastructure\Persistence\InMemory\Repository\InMemoryCategoryRepository
+
+  category.repository.doctrineCategoryRepository:
+    class: Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Repository\DoctrineCategoryRepository
+    arguments:
+      - '@doctrine.orm.entity_manager'

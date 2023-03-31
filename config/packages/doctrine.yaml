@@ -8,13 +8,14 @@ doctrine:
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
-        auto_mapping: true
+        auto_mapping: false
         mappings:
-            App:
+            Category:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                type: xml
+                dir: '%kernel.project_dir%/src/Esl/Category/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Entity'
+                alias: Category
 
 when@test:
     doctrine:

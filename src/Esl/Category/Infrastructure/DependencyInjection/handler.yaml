@@ -1,0 +1,11 @@
+services:
+  category.query.category.getCategoriesHandler:
+    class: Arcmedia\Esl\Category\Application\Query\GetCategoriesHandler
+    arguments:
+      - '@category.repository.doctrineCategoryRepository'
+
+  category.command.category.saveCategoriesHandler:
+    class: Arcmedia\Esl\Category\Application\Command\SaveCategoriesHandler
+    arguments:
+      - '@category.repository.doctrineCategoryRepository'
+      - '@category.services.uuidGenerator'

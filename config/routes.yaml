@@ -1,3 +1,2 @@
-controllers:
-    resource: ../src/Controller/
-    type: attribute
+category:
+    resource: ../src/Esl/Category/Infrastructure/Routes/routes.yaml

@@ -1,0 +1,12 @@
+services:
+  esl.controller.categories.getCategories:
+    class: Arcmedia\Esl\Category\Infrastructure\Ui\Http\Controller\GetCategoryController
+    arguments:
+      - '@category.query.category.getCategoriesHandler'
+    public: true
+
+  esl.controller.categories.saveCategories:
+    class: Arcmedia\Esl\Category\Infrastructure\Ui\Http\Controller\SaveCategoryController
+    arguments:
+      - '@category.command.category.saveCategoriesHandler'
+    public: true

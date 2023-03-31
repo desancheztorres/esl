@@ -1,0 +1,3 @@
+services:
+  category.services.uuidGenerator:
+    class: Arcmedia\Esl\Category\Infrastructure\Service\UuidGenerator

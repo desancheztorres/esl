@@ -1,0 +1,9 @@
+category.getCategory:
+  path: /categories
+  controller: 'esl.controller.categories.getCategories'
+  methods: [GET]
+
+category.saveCategory:
+  path: /categories
+  controller: 'esl.controller.categories.saveCategories'
+  methods: [POST]
