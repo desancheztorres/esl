@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Arcmedia\Esl\Category\Application\Request;
 
-use DateTimeInterface;
-
 final class CreateCategoryRequest
 {
     public function __construct(

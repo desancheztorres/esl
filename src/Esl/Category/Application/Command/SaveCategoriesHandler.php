@@ -8,12 +8,12 @@ use Arcmedia\Esl\Category\Application\Request\CreateCategoryRequest;
 use Arcmedia\Esl\Category\Application\Response\CategoryResponse;
 use Arcmedia\Esl\Category\Domain\Category;
 use Arcmedia\Esl\Category\Domain\Contract\CategoryRepository;
-use Arcmedia\Esl\Category\Domain\Service\IdStringGenerator;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryId;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryIsActive;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryLevel;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryName;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParent;
+use Arcmedia\Shared\Domain\Service\IdStringGenerator;
 
 final class SaveCategoriesHandler
 {
