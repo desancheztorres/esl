@@ -18,17 +18,17 @@ final class AttributeResponse
     private string $frontendModel;
     private string $sourceModel;
 
-    public function __construct(private readonly Attribute $attribute)
+    public function __construct(readonly Attribute $attribute)
     {
-        $this->id = $this->attribute->id()->value();
-        $this->name = $this->attribute->name()->value();
-        $this->searchable = $this->attribute->searchable()->value();
-        $this->filterable = $this->attribute->filterable()->value();
-        $this->description = $this->attribute->description()->value();
-        $this->backendModel = $this->attribute->backendModel()->value();
-        $this->frontendInput = $this->attribute->frontendInput()->value();
-        $this->frontendModel = $this->attribute->frontendModel()->value();
-        $this->sourceModel = $this->attribute->sourceModel()->value();
+        $this->id = $attribute->id()->value();
+        $this->name = $attribute->name()->value();
+        $this->searchable = $attribute->searchable()->value();
+        $this->filterable = $attribute->filterable()->value();
+        $this->description = $attribute->description()->value();
+        $this->backendModel = $attribute->backendModel()->value();
+        $this->frontendInput = $attribute->frontendInput()->value();
+        $this->frontendModel = $attribute->frontendModel()->value();
+        $this->sourceModel = $attribute->sourceModel()->value();
     }
 
     public function id(): string
