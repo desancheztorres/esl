@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Repository;
+namespace Arcmedia\Shared\Infrastructure\Persistence\Doctrine\Repository;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;

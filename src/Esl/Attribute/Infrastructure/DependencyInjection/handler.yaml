@@ -1,0 +1,11 @@
+services:
+  attribute.query.attribute.getAttributesHandler:
+    class: Arcmedia\Esl\Attribute\Application\Query\GetAttributesHandler
+    arguments:
+      - '@attribute.repository.doctrineAttributeRepository'
+
+  attribute.command.attribute.saveAttributesHandler:
+    class: Arcmedia\Esl\Attribute\Application\Command\SaveAttributesHandler
+    arguments:
+      - '@attribute.repository.doctrineAttributeRepository'
+      - '@attribute.services.uuidGenerator'

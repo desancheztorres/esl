@@ -1,0 +1,17 @@
+<doctrine-mapping>
+    <entity name="Arcmedia\Esl\Attribute\Infrastructure\Persistence\Doctrine\Entity\Attribute" table="attribute">
+        <id name="id" type="guid" />
+        <field name="code" type="string" length="255" />
+        <field name="name" type="string" length="255" />
+        <field name="is_searchable" type="boolean" />
+        <field name="is_filterable" type="boolean" />
+        <field name="description" type="text" />
+        <field name="backend_type" type="string" />
+        <field name="backend_model" type="string" />
+        <field name="frontend_input" type="string" />
+        <field name="frontend_model" type="string" />
+        <field name="source_model" type="string" />
+        <field name="created_at" type="datetime" />
+        <field name="updated_at" type="datetime" nullable="true" />
+    </entity>
+</doctrine-mapping>

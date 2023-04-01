@@ -16,6 +16,12 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Esl/Category/Infrastructure/Persistence/Doctrine/Mapping'
                 prefix: 'Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Entity'
                 alias: Category
+            Attribute:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Esl/Attribute/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'Arcmedia\Esl\Attribute\Infrastructure\Persistence\Doctrine\Entity'
+                alias: Attribute
 
 when@test:
     doctrine:

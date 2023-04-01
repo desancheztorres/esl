@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Infrastructure\Service;
+namespace Arcmedia\Shared\Infrastructure\Service;
 
-use Arcmedia\Esl\Category\Domain\Service\IdStringGenerator;
+use Arcmedia\Shared\Domain\Service\IdStringGenerator;
 use Ramsey\Uuid\Uuid;
 
 final class UuidGenerator implements IdStringGenerator

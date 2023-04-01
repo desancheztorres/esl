@@ -1,2 +1,5 @@
 category:
     resource: ../src/Esl/Category/Infrastructure/Routes/routes.yaml
+
+attribute:
+  resource: ../src/Esl/Attribute/Infrastructure/Routes/routes.yaml

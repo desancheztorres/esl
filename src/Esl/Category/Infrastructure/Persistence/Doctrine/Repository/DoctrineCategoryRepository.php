@@ -13,6 +13,7 @@ use Arcmedia\Esl\Category\Domain\ValueObject\CategoryLevel;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryName;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParent;
 use Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Entity\Category as CategoryEntity;
+use Arcmedia\Shared\Infrastructure\Persistence\Doctrine\Repository\DoctrineRepository;
 use Doctrine\ORM\Exception\ORMException;
 
 final class DoctrineCategoryRepository extends DoctrineRepository implements CategoryRepository

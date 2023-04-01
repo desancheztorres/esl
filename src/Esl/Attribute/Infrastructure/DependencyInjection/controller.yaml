@@ -1,0 +1,12 @@
+services:
+  esl.controller.attributes.getAttributes:
+    class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\GetAttributeController
+    arguments:
+      - '@attribute.query.attribute.getAttributesHandler'
+    public: true
+
+  esl.controller.attributes.saveAttributes:
+    class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\SaveAttributeController
+    arguments:
+      - '@attribute.command.attribute.saveAttributesHandler'
+    public: true
