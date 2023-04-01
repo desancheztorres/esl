@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Domain;
+namespace Arcmedia\Esl\Attribute\Domain;
 
 use Arcmedia\Shared\Domain\Collection\ObjectCollection;
 
-final class CategoryCollection extends ObjectCollection
+final class AttributeCollection extends ObjectCollection
 {
     protected function className(): string
     {
-        return Category::class;
+        return Attribute::class;
     }
 }

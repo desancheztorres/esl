@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Domain\Collection;
+namespace Arcmedia\Shared\Domain\Collection;
 
 use Exception;
 
-class InvalidCollectionObjectException extends Exception
+final class InvalidCollectionObjectException extends Exception
 {
     public function __construct($actual, string $expected)
     {

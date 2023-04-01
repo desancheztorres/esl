@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Domain\Service;
+namespace Arcmedia\Shared\Domain\Service;
 
 interface IdStringGenerator
 {

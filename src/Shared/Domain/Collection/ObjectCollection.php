@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Arcmedia\Esl\Category\Domain\Collection;
+namespace Arcmedia\Shared\Domain\Collection;
+
 
 abstract class ObjectCollection
 {
