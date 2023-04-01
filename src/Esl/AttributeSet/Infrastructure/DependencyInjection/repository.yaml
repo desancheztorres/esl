@@ -1,0 +1,5 @@
+services:
+  attributeSet.repository.doctrineAttributeSetRepository:
+    class: Arcmedia\Esl\AttributeSet\Infrastructure\Persistence\Doctrine\Repository\DoctrineAttributeSetRepository
+    arguments:
+      - '@doctrine.orm.entity_manager'

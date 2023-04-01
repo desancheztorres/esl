@@ -1,0 +1,4 @@
+attributeSet.getAttributeSet:
+  path: /attributeset
+  controller: 'esl.controller.attributeSet.getAttributeSet'
+  methods: [GET]

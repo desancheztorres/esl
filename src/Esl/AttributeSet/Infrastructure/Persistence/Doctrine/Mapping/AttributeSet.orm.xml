@@ -1,0 +1,8 @@
+<doctrine-mapping>
+    <entity name="Arcmedia\Esl\AttributeSet\Infrastructure\Persistence\Doctrine\Entity\AttributeSet" table="attribute_set">
+        <id name="id" type="guid" />
+        <field name="name" type="string" length="255" />
+        <field name="created_at" type="datetime" />
+        <field name="updated_at" type="datetime" nullable="true" />
+    </entity>
+</doctrine-mapping>

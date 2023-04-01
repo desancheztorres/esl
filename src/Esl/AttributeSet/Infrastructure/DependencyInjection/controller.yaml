@@ -1,0 +1,6 @@
+services:
+  esl.controller.attributeSet.getAttributeSet:
+    class: Arcmedia\Esl\AttributeSet\Infrastructure\Ui\Http\Controller\GetAttributeSetController
+    arguments:
+      - '@attributeSet.query.attributeSet.getAttributesSetHandler'
+    public: true

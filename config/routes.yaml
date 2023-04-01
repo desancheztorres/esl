@@ -3,3 +3,6 @@ category:
 
 attribute:
   resource: ../src/Esl/Attribute/Infrastructure/Routes/routes.yaml
+
+attributeSet:
+  resource: ../src/Esl/AttributeSet/Infrastructure/Routes/routes.yaml

@@ -1,0 +1,3 @@
+services:
+  attributeSet.services.uuidGenerator:
+    class: Arcmedia\Shared\Infrastructure\Service\UuidGenerator

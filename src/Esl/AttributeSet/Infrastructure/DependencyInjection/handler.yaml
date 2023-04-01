@@ -1,0 +1,5 @@
+services:
+  attributeSet.query.attributeSet.getAttributesSetHandler:
+    class: Arcmedia\Esl\AttributeSet\Application\Query\GetAttributesSetHandler
+    arguments:
+      - '@attributeSet.repository.doctrineAttributeSetRepository'

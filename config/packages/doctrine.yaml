@@ -22,6 +22,12 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Esl/Attribute/Infrastructure/Persistence/Doctrine/Mapping'
                 prefix: 'Arcmedia\Esl\Attribute\Infrastructure\Persistence\Doctrine\Entity'
                 alias: Attribute
+            AttributeSet:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Esl/AttributeSet/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'Arcmedia\Esl\AttributeSet\Infrastructure\Persistence\Doctrine\Entity'
+                alias: AttributeSet
 
 when@test:
     doctrine:
