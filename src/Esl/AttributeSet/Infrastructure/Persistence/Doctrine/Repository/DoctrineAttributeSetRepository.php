@@ -11,6 +11,7 @@ use Arcmedia\Esl\AttributeSet\Domain\ValueObject\AttributeSetId;
 use Arcmedia\Esl\AttributeSet\Domain\ValueObject\AttributeSetName;
 use Arcmedia\Esl\AttributeSet\Infrastructure\Persistence\Doctrine\Entity\AttributeSet as AttributeSetEntity;
 use Arcmedia\Shared\Infrastructure\Persistence\Doctrine\Repository\DoctrineRepository;
+use Doctrine\ORM\Exception\ORMException;
 
 final class DoctrineAttributeSetRepository extends DoctrineRepository implements AttributeSetRepository
 {
@@ -32,6 +33,16 @@ final class DoctrineAttributeSetRepository extends DoctrineRepository implements
         }
 
         return $attributeSetCollection;
+    }
+
+    public function save(AttributeSet $attributeSet): void
+    {
+        try {
+            $this->entityManager->persist($this->toEntity($attributeSet));
+            $this->entityManager->flush();
+        } catch (ORMException $e) {
+            var_dump($e->getMessage());
+        }
     }
 
     private function toDomain(AttributeSetEntity $attributeSet): AttributeSet

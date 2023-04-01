@@ -2,3 +2,8 @@ attributeSet.getAttributeSet:
   path: /attributeset
   controller: 'esl.controller.attributeSet.getAttributeSet'
   methods: [GET]
+
+attributeSet.saveAttributeSet:
+  path: /attributeset
+  controller: 'esl.controller.attributesSet.saveAttributesSet'
+  methods: [POST]

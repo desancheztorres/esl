@@ -3,3 +3,9 @@ services:
     class: Arcmedia\Esl\AttributeSet\Application\Query\GetAttributesSetHandler
     arguments:
       - '@attributeSet.repository.doctrineAttributeSetRepository'
+
+  attributeSet.query.attributeSet.saveAttributesSetHandler:
+    class: Arcmedia\Esl\AttributeSet\Application\Command\SaveAttributesSetHandler
+    arguments:
+      - '@attributeSet.repository.doctrineAttributeSetRepository'
+      - '@attribute.services.uuidGenerator'

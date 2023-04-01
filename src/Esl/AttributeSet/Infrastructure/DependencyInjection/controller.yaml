@@ -4,3 +4,9 @@ services:
     arguments:
       - '@attributeSet.query.attributeSet.getAttributesSetHandler'
     public: true
+
+  esl.controller.attributesSet.saveAttributesSet:
+    class: Arcmedia\Esl\AttributeSet\Infrastructure\Ui\Http\Controller\SaveAttributeSetController
+    arguments:
+      - '@attributeSet.query.attributeSet.saveAttributesSetHandler'
+    public: true
