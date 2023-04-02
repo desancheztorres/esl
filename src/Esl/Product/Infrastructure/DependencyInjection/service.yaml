@@ -1,0 +1,3 @@
+services:
+  product.services.uuidGenerator:
+    class: Arcmedia\Shared\Infrastructure\Service\UuidGenerator

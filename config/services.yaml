@@ -22,3 +22,4 @@ imports:
     - {resource: '../src/esl/Category/Infrastructure/DependencyInjection/'}:
     - {resource: '../src/esl/Attribute/Infrastructure/DependencyInjection/'}:
     - {resource: '../src/esl/AttributeSet/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/esl/Product/Infrastructure/DependencyInjection/'}:

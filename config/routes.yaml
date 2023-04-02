@@ -6,3 +6,6 @@ attribute:
 
 attributeSet:
   resource: ../src/Esl/AttributeSet/Infrastructure/Routes/routes.yaml
+
+product:
+  resource: ../src/Esl/Product/Infrastructure/Routes/routes.yaml

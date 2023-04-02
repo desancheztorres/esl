@@ -1,0 +1,12 @@
+services:
+  esl.controller.products.getProducts:
+    class: Arcmedia\Esl\Product\Infrastructure\Ui\Http\Controller\GetProductController
+    arguments:
+      - '@product.query.product.getProductsHandler'
+    public: true
+
+  esl.controller.products.saveProducts:
+    class: Arcmedia\Esl\Product\Infrastructure\Ui\Http\Controller\SaveProductController
+    arguments:
+      - '@product.command.product.saveProductsHandler'
+    public: true

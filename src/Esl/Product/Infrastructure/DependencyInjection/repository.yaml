@@ -1,0 +1,5 @@
+services:
+  product.repository.doctrineProductRepository:
+    class: Arcmedia\Esl\Product\Infrastructure\Persistence\Doctrine\Repository\DoctrineProductRepository
+    arguments:
+      - '@doctrine.orm.entity_manager'

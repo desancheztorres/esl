@@ -1,0 +1,12 @@
+<doctrine-mapping>
+    <entity name="Arcmedia\Esl\Product\Infrastructure\Persistence\Doctrine\Entity\Product" table="product">
+        <id name="id" type="guid" />
+        <field name="sku" type="string" length="255" />
+        <field name="name" type="string" length="255" />
+        <field name="price" type="integer" length="255" />
+        <field name="status" type="integer" length="255" />
+        <field name="visibility" type="integer" length="255" />
+        <field name="created_at" type="datetime" />
+        <field name="updated_at" type="datetime" nullable="true" />
+    </entity>
+</doctrine-mapping>

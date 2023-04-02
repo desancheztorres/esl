@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Arcmedia\Esl\Attribute\Domain\ValueObject;
 
-use Arcmedia\Esl\Attribute\Domain\Exception\ProductAttributeBackendTypeNotFound;
 use Arcmedia\Esl\Attribute\Domain\Exception\ProductAttributeNotFound;
 
 final class AttributeBackendType

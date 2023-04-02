@@ -1,0 +1,9 @@
+product.getProduct:
+  path: /products
+  controller: 'esl.controller.products.getProducts'
+  methods: [GET]
+
+product.saveProduct:
+  path: /products
+  controller: 'esl.controller.products.saveProducts'
+  methods: [POST]

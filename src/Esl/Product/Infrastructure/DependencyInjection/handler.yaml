@@ -1,0 +1,11 @@
+services:
+  product.query.product.getProductsHandler:
+    class: Arcmedia\Esl\Product\Application\Query\GetProductsHandler
+    arguments:
+      - '@product.repository.doctrineProductRepository'
+
+  product.command.product.saveProductsHandler:
+    class: Arcmedia\Esl\Product\Application\Command\SaveProductsHandler
+    arguments:
+      - '@product.repository.doctrineProductRepository'
+      - '@product.services.uuidGenerator'
