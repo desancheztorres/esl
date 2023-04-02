@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Arcmedia\Esl\AttributeSet\Infrastructure\Persistence\Doctrine\Entity;
 
 use DateTime;
-use DateTimeImmutable;
+use DateTimeInterface;
 
 final class AttributeSet
 {
     public function __construct(
         private readonly string $id,
         private readonly string $name,
-        private readonly DateTimeImmutable $created_at,
+        private readonly DateTimeInterface $created_at,
         private readonly ?DateTime $updated_at,
     )
     {
@@ -28,7 +28,7 @@ final class AttributeSet
         return $this->name;
     }
 
-    public function created_at(): DateTimeImmutable
+    public function created_at(): DateTimeInterface
     {
         return $this->created_at;
     }
