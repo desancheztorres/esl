@@ -48,7 +48,7 @@ schema/create:
 schema/update:
 	$(RUN_SYMFONY) doctrine:schema:update --force
 
-phpstan:
+stan:
 	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g
 
 tools/php-cs-fixer/vendor/bin/php-cs-fixer:

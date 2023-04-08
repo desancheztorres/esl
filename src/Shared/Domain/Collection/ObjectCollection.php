@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Arcmedia\Shared\Domain\Collection;
 
-
+/** @phpstan-consistent-constructor */
 abstract class ObjectCollection
 {
     private ?array $objects;
 
+    /**
+     * @throws InvalidCollectionObjectException
+     */
     public function __construct(array $objects = null)
     {
         if (!empty($objects)) {
@@ -21,7 +24,10 @@ abstract class ObjectCollection
         $this->objects = $objects;
     }
 
-    public static function init(): self
+    /**
+     * @throws InvalidCollectionObjectException
+     */
+    public static function init(): static
     {
         return new static([]);
     }
