@@ -50,6 +50,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Arcmedia\\App\\": "apps",
             "Arcmedia\\Esl\\": "src/Esl",
             "Arcmedia\\": "src/"
         }

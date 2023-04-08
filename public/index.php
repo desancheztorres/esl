@@ -1,6 +1,6 @@
 <?php
 
-use Arcmedia\Kernel;
+use Arcmedia\App\Kernel;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
