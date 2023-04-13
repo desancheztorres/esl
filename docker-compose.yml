@@ -1,7 +1,7 @@
 version: "3.3"
 
 networks:
-  symfony:
+  esl:
 
 services:
   app:
@@ -10,16 +10,19 @@ services:
       args:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
-    container_name: symfony_app
+    container_name: esl_app
     ports:
       - "8090:80"
     volumes:
       - .:/var/www/html
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     depends_on:
       - php
       - db
     networks:
-      - symfony
+      - esl
 
   php:
     build:
@@ -27,19 +30,19 @@ services:
       args:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
-    container_name: symfony_php
+    container_name: esl_php
     volumes:
       - .:/var/www/html
     networks:
-      - symfony
+      - esl
 
   db:
     image: mariadb:10.6
-    container_name: symfony_db
+    container_name: esl_db
     restart: unless-stopped
     tty: true
     volumes:
-      - symfony_db:/var/lib/mysql
+      - esl_db:/var/lib/mysql
     ports:
       - "33069:3306"
     environment:
@@ -48,10 +51,18 @@ services:
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
     networks:
-      - symfony
+      - esl
+
+  redis:
+    image: redis:latest
+    container_name: esl_redis
+    ports:
+      - "6382:6379"
+    networks:
+      - esl
 
 volumes:
-  symfony_db:
+  esl_db:
 
 
 
