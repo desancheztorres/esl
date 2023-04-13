@@ -11,15 +11,8 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    Arcmedia\Commands\Excel: '@Arcmedia\Commands\CategoryExcel'
-    Arcmedia\Commands\CategoryExcel:
-        arguments:
-            $filename: 'eslimport/products.xlsx'
-            $sheetName: 'Daten zum Testen'
-            $inputFileType: 'Xlsx'
-
 imports:
-    - {resource: '../src/esl/Category/Infrastructure/DependencyInjection/'}:
-    - {resource: '../src/esl/Attribute/Infrastructure/DependencyInjection/'}:
-    - {resource: '../src/esl/AttributeSet/Infrastructure/DependencyInjection/'}:
-    - {resource: '../src/esl/Product/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/Esl/Category/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/Esl/Attribute/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/Esl/AttributeSet/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/Esl/Product/Infrastructure/DependencyInjection/'}:

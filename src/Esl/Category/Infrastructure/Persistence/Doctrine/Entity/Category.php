@@ -11,9 +11,10 @@ final class Category
     public function __construct(
         private readonly string $id,
         private readonly string $name,
-        private readonly string $parent,
+        private readonly string $parent_id,
         private readonly int $is_active,
         private readonly int $level,
+        private readonly string $path,
         private readonly DateTimeInterface $created_at,
         private readonly DateTimeInterface $updated_at,
     ) {
@@ -29,9 +30,9 @@ final class Category
         return $this->name;
     }
 
-    public function parent(): string
+    public function parent_id(): string
     {
-        return $this->parent;
+        return $this->parent_id;
     }
 
     public function isActive(): int
@@ -42,6 +43,11 @@ final class Category
     public function level(): int
     {
         return $this->level;
+    }
+
+    public function path(): string
+    {
+        return $this->path;
     }
 
     public function createdAt(): DateTimeInterface

@@ -5,8 +5,14 @@ services:
       - '@category.query.category.getCategoriesHandler'
     public: true
 
-  esl.controller.categories.saveCategories:
+  esl.controller.categories.saveCategory:
     class: Arcmedia\Esl\Category\Infrastructure\Ui\Http\Controller\SaveCategoryController
     arguments:
-      - '@category.command.category.saveCategoriesHandler'
+      - '@category.command.saveCategoryHandler'
+    public: true
+
+  esl.controller.categories.importCategories:
+    class: Arcmedia\Esl\Category\Infrastructure\Ui\Http\Controller\ImportCategoriesXlsxFileController
+    arguments:
+      - '@category.command.saveManyCategoriesHandler'
     public: true

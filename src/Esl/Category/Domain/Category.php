@@ -8,7 +8,8 @@ use Arcmedia\Esl\Category\Domain\ValueObject\CategoryId;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryIsActive;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryLevel;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryName;
-use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParent;
+use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParentId;
+use Arcmedia\Esl\Category\Domain\ValueObject\CategoryPath;
 use DateTime;
 use DateTimeImmutable;
 
@@ -20,9 +21,10 @@ final class Category
     public function __construct(
         private readonly CategoryId $id,
         private readonly CategoryName $name,
-        private readonly CategoryParent $parent,
+        private readonly CategoryParentId $parent_id,
         private readonly CategoryIsActive $isActive,
-        private readonly CategoryLevel $level
+        private readonly CategoryLevel $level,
+        private readonly CategoryPath $path,
     )
     {
         $this->createdAt = new DateTimeImmutable();
@@ -39,9 +41,9 @@ final class Category
         return $this->name;
     }
 
-    public function parent(): CategoryParent
+    public function parent(): CategoryParentId
     {
-        return $this->parent;
+        return $this->parent_id;
     }
 
     public function isActive(): CategoryIsActive
@@ -52,6 +54,11 @@ final class Category
     public function level(): CategoryLevel
     {
         return $this->level;
+    }
+
+    public function path(): CategoryPath
+    {
+        return $this->path;
     }
 
     public function createdAt(): DateTimeImmutable
@@ -67,11 +74,12 @@ final class Category
     public static function create(
         CategoryId $id,
         CategoryName $name,
-        CategoryParent $parent,
+        CategoryParentId $parent_id,
         CategoryIsActive $isActive,
-        CategoryLevel $level
+        CategoryLevel $level,
+        CategoryPath $path,
     ): self
     {
-        return new self($id, $name, $parent, $isActive, $level);
+        return new self($id, $name, $parent_id, $isActive, $level, $path);
     }
 }

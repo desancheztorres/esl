@@ -12,14 +12,15 @@ use Arcmedia\Esl\Category\Domain\ValueObject\CategoryId;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryIsActive;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryLevel;
 use Arcmedia\Esl\Category\Domain\ValueObject\CategoryName;
-use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParent;
+use Arcmedia\Esl\Category\Domain\ValueObject\CategoryParentId;
+use Arcmedia\Esl\Category\Domain\ValueObject\CategoryPath;
 use Arcmedia\Shared\Domain\Service\IdStringGenerator;
 
-final class SaveCategoriesHandler
+final class SaveCategoryHandler
 {
     public function __construct(
         private readonly CategoryRepository $repository,
-        private readonly IdStringGenerator $idStringGenerator
+        private readonly IdStringGenerator $idStringGenerator,
     )
     {
     }
@@ -29,9 +30,10 @@ final class SaveCategoriesHandler
         $category = Category::create(
             id: new CategoryId($this->idStringGenerator->generate()),
             name: new CategoryName($request->name()),
-            parent: new CategoryParent($request->parent()),
+            parent_id: new CategoryParentId($request->parent()),
             isActive: new CategoryIsActive($request->isActive()),
-            level: new CategoryLevel($request->level())
+            level: new CategoryLevel($request->level()),
+            path: new CategoryPath($request->path()),
         );
 
         $this->repository->save($category);

@@ -4,8 +4,14 @@ services:
     arguments:
       - '@category.repository.doctrineCategoryRepository'
 
-  category.command.category.saveCategoriesHandler:
-    class: Arcmedia\Esl\Category\Application\Command\SaveCategoriesHandler
+  category.command.saveCategoryHandler:
+    class: Arcmedia\Esl\Category\Application\Command\SaveCategoryHandler
+    arguments:
+      - '@category.repository.doctrineCategoryRepository'
+      - '@category.services.uuidGenerator'
+
+  category.command.saveManyCategoriesHandler:
+    class: Arcmedia\Esl\Category\Application\Command\SaveManyCategoriesHandler
     arguments:
       - '@category.repository.doctrineCategoryRepository'
       - '@category.services.uuidGenerator'

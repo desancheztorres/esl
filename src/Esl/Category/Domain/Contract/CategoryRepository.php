@@ -11,4 +11,7 @@ interface CategoryRepository
 {
     public function findAll(): CategoryCollection;
     public function save(Category $category): void;
+
+    /** @param Category[] $categories */
+    public function saveMany(array $categories): void;
 }

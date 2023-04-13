@@ -6,6 +6,6 @@ namespace Arcmedia\Esl\Category\Domain\ValueObject;
 
 use Arcmedia\Shared\Domain\ValueObject\StringValueObject;
 
-final class CategoryParent extends StringValueObject
+final class CategoryPath extends StringValueObject
 {
 }

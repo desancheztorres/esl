@@ -13,6 +13,7 @@ final class CategoryResponse
     private string $parent;
     private int $isActive;
     private int $level;
+    private string $path;
 
     public function __construct(private readonly Category $category)
     {
@@ -21,6 +22,7 @@ final class CategoryResponse
         $this->parent = $this->category->parent()->value();
         $this->isActive = $this->category->isActive()->value();
         $this->level = $this->category->level()->value();
+        $this->path = $this->category->path()->value();
     }
 
     public function id(): string
@@ -48,6 +50,11 @@ final class CategoryResponse
         return $this->level;
     }
 
+    public function path(): string
+    {
+        return $this->path;
+    }
+
     public function toArray(): array
     {
         return [
@@ -56,6 +63,7 @@ final class CategoryResponse
             'parent' => $this->parent(),
             'isActive' => $this->isActive(),
             'level' => $this->level(),
+            'path' => $this->path(),
         ];
     }
 }

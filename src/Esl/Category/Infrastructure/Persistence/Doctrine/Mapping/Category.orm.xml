@@ -1,11 +1,12 @@
 <doctrine-mapping>
     <entity name="Arcmedia\Esl\Category\Infrastructure\Persistence\Doctrine\Entity\Category" table="category">
         <id name="id" type="guid" />
-        <field name="name" type="string" length="255" />
-        <field name="parent" type="integer" length="255" />
-        <field name="is_active" type="boolean" length="255" />
-        <field name="level" type="integer" length="1" />
-        <field name="created_at" type="datetime" />
+        <field name="name" type="string" length="255" nullable="false" />
+        <field name="parent_id" type="string" length="36" nullable="true" />
+        <field name="is_active" type="boolean" length="255" nullable="false" />
+        <field name="level" type="integer" length="1" nullable="false" />
+        <field name="path" type="string" length="255" nullable="false" unique="true"/>
+        <field name="created_at" type="datetime" nullable="false" />
         <field name="updated_at" type="datetime" nullable="true" />
     </entity>
 </doctrine-mapping>

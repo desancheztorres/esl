@@ -7,3 +7,8 @@ category.saveCategory:
   path: /categories
   controller: 'esl.controller.categories.saveCategories'
   methods: [POST]
+
+category.importCategories:
+  path: /categories-import
+  controller: 'esl.controller.categories.importCategories'
+  methods: [POST]

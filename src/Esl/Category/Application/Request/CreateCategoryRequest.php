@@ -11,6 +11,7 @@ final class CreateCategoryRequest
         private readonly string $parent,
         private readonly int $is_active,
         private readonly int $level,
+        private readonly string $path,
     ) {
     }
 
@@ -32,5 +33,10 @@ final class CreateCategoryRequest
     public function level(): int
     {
         return $this->level;
+    }
+
+    public function path(): string
+    {
+        return $this->path;
     }
 }
