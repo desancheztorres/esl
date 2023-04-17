@@ -1,0 +1,6 @@
+services:
+  redis.redisService:
+    class: Arcmedia\Esl\Shared\Infrastructure\Service\RedisService
+    arguments:
+      $redisHost: '%env(REDIS_HOST)%'
+      $redisPort: '%env(REDIS_PORT)%'

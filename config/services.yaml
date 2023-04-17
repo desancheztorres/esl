@@ -16,3 +16,4 @@ imports:
     - {resource: '../src/Esl/Attribute/Infrastructure/DependencyInjection/'}:
     - {resource: '../src/Esl/AttributeSet/Infrastructure/DependencyInjection/'}:
     - {resource: '../src/Esl/Product/Infrastructure/DependencyInjection/'}:
+    - {resource: '../src/Esl/Shared/Infrastructure/DependencyInjection/'}:

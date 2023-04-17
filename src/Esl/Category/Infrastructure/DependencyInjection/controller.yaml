@@ -15,4 +15,6 @@ services:
     class: Arcmedia\Esl\Category\Infrastructure\Ui\Http\Controller\ImportCategoriesXlsxFileController
     arguments:
       - '@category.command.saveManyCategoriesHandler'
+      - '@redis.redisService'
+      - '@category.services.uuidGenerator'
     public: true
