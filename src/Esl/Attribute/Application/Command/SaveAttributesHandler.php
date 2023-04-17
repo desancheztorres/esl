@@ -8,6 +8,7 @@ use Arcmedia\Esl\Attribute\Application\Request\CreateAttributeRequest;
 use Arcmedia\Esl\Attribute\Application\Response\AttributeResponse;
 use Arcmedia\Esl\Attribute\Domain\Attribute;
 use Arcmedia\Esl\Attribute\Domain\Contract\AttributeRepository;
+use Arcmedia\Esl\Attribute\Domain\Exception\AttributeAlreadyExists;
 use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeBackendModel;
 use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeBackendType;
 use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeCode;
@@ -45,8 +46,20 @@ final class SaveAttributesHandler
             sourceModel: new AttributeSourceModel($request->sourceModel())
         );
 
+        $this->ensureAttributeDoesntExist($request->code());
+
         $this->repository->save($attribute);
 
         return new AttributeResponse($attribute);
+    }
+
+    private function ensureAttributeDoesntExist(string $code): void
+    {
+        $attributeCode = new AttributeCode($code);
+        $existingAttribute = $this->repository->findByCriteria($attributeCode);
+
+        if (null !== $existingAttribute) {
+            throw new AttributeAlreadyExists("Attribute code {$attributeCode->value()} already exists in database.");
+        }
     }
 }

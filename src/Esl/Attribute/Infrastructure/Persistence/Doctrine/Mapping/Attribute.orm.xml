@@ -1,7 +1,7 @@
 <doctrine-mapping>
     <entity name="Arcmedia\Esl\Attribute\Infrastructure\Persistence\Doctrine\Entity\Attribute" table="attribute">
         <id name="id" type="guid" />
-        <field name="code" type="string" length="255" />
+        <field name="code" type="string" length="255" unique="true" />
         <field name="name" type="string" length="255" />
         <field name="is_searchable" type="boolean" />
         <field name="is_filterable" type="boolean" />
