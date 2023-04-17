@@ -7,3 +7,8 @@ attributeSet.saveAttributeSet:
   path: /attributeset
   controller: 'esl.controller.attributesSet.saveAttributesSet'
   methods: [POST]
+
+attributeSet.importAttributesSet:
+  path: /attributeset-import
+  controller: 'esl.controller.attributesSet.importAttributesSet'
+  methods: [POST]

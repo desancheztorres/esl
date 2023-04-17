@@ -4,8 +4,8 @@ services:
     arguments:
       - '@attributeSet.repository.doctrineAttributeSetRepository'
 
-  attributeSet.query.attributeSet.saveAttributesSetHandler:
-    class: Arcmedia\Esl\AttributeSet\Application\Command\SaveAttributesSetHandler
+  attributeSet.command.saveAttributeSetHandler:
+    class: Arcmedia\Esl\AttributeSet\Application\Command\SaveAttributeSetHandler
     arguments:
       - '@attributeSet.repository.doctrineAttributeSetRepository'
       - '@attribute.services.uuidGenerator'

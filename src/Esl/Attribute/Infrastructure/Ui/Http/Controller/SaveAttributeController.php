@@ -21,16 +21,16 @@ final class SaveAttributeController
         try {
             $attribute = $this->saveAttributesHandler->__invoke(
                 new CreateAttributeRequest(
-                    code: $request->get('code'),
-                    name: $request->get('name'),
-                    searchable: $request->get('searchable'),
-                    filterable: $request->get('filterable'),
-                    description: $request->get('description'),
-                    backendType: $request->get('backend_type'),
-                    backendModel: $request->get('backend_model'),
-                    frontendInput: $request->get('frontend_input'),
-                    frontendModel: $request->get('frontend_model'),
-                    sourceModel: $request->get('source_model'),
+                    code: 'code',
+                    name: 'name',
+                    searchable: true,
+                    filterable: true,
+                    description: 'description',
+                    backendType: 'int',
+                    backendModel: 'int',
+                    frontendInput: 'int',
+                    frontendModel: 'int',
+                    sourceModel: 'int',
                 )
             );
 

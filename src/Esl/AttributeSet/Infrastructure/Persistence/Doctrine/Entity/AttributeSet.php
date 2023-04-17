@@ -14,8 +14,7 @@ final class AttributeSet
         private readonly string $name,
         private readonly DateTimeInterface $created_at,
         private readonly ?DateTime $updated_at,
-    )
-    {
+    ) {
     }
 
     public function id(): string

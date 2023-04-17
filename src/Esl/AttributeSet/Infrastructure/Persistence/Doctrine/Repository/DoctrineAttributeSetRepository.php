@@ -35,6 +35,17 @@ final class DoctrineAttributeSetRepository extends DoctrineRepository implements
         return $attributeSetCollection;
     }
 
+    public function searchByCriteria(AttributeSetName $name): ?AttributeSet
+    {
+        $attributeSet = $this->repository->findOneBy(['name' => $name->value()]);
+
+        if (null === $attributeSet) {
+            return null;
+        }
+
+        return $this->toDomain($attributeSet);
+    }
+
     public function save(AttributeSet $attributeSet): void
     {
         try {

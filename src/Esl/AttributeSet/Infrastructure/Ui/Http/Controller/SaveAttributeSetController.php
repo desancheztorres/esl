@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Arcmedia\Esl\AttributeSet\Infrastructure\Ui\Http\Controller;
 
-use Arcmedia\Esl\AttributeSet\Application\Command\SaveAttributesSetHandler;
+use Arcmedia\Esl\AttributeSet\Application\Command\SaveAttributeSetHandler;
 use Arcmedia\Esl\AttributeSet\Application\Create\CreateAttributeSetRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class SaveAttributeSetController
 {
-    public function __construct(private readonly SaveAttributesSetHandler $handler)
+    public function __construct(private readonly SaveAttributeSetHandler $handler)
     {
     }
 
@@ -21,7 +21,8 @@ final class SaveAttributeSetController
         try {
             $attributeSet = $this->handler->__invoke(
                 new CreateAttributeSetRequest(
-                    name: $request->get('name'),
+                    name: $request->get('name', 'hahah'),
+                    attributes: $request->get('attributes', []),
                 )
             );
 

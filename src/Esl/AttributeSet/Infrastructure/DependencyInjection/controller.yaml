@@ -8,5 +8,12 @@ services:
   esl.controller.attributesSet.saveAttributesSet:
     class: Arcmedia\Esl\AttributeSet\Infrastructure\Ui\Http\Controller\SaveAttributeSetController
     arguments:
-      - '@attributeSet.query.attributeSet.saveAttributesSetHandler'
+      - '@attributeSet.command.saveAttributeSetHandler'
+    public: true
+
+  esl.controller.attributesSet.importAttributesSet:
+    class: Arcmedia\Esl\AttributeSet\Infrastructure\Ui\Http\Controller\ImportAttributesSetXlsxFile
+    arguments:
+      - '@attribute.query.getAttributesHandler'
+      - '@attributeSet.command.saveAttributeSetHandler'
     public: true
