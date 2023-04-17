@@ -19,6 +19,7 @@ use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeName;
 use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeSearchable;
 use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeSourceModel;
 use Arcmedia\Esl\Attribute\Infrastructure\Persistence\Doctrine\Entity\Attribute as AttributeEntity;
+use Arcmedia\Shared\Domain\Collection\InvalidCollectionObjectException;
 use Arcmedia\Shared\Infrastructure\Persistence\Doctrine\Repository\DoctrineRepository;
 use Doctrine\ORM\Exception\ORMException;
 
@@ -29,6 +30,9 @@ final class DoctrineAttributeRepository extends DoctrineRepository implements At
         return AttributeEntity::class;
     }
 
+    /**
+     * @throws InvalidCollectionObjectException
+     */
     public function findAll(): AttributeCollection
     {
         $attributes = $this->repository->findAll();
@@ -61,7 +65,7 @@ final class DoctrineAttributeRepository extends DoctrineRepository implements At
         return new Attribute(
             id: new AttributeId($attribute->id()),
             code: new AttributeCode($code),
-            name: new AttributeName($code, $attribute->name()),
+            name: new AttributeName($attribute->name()),
             searchable: new AttributeSearchable($attribute->searchable()),
             filterable: new AttributeFilterable($attribute->filterable()),
             description: new AttributeDescription($attribute->description()),

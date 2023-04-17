@@ -9,9 +9,10 @@ use Arcmedia\Esl\Attribute\Domain\Attribute;
 final class AttributeResponse
 {
     private string $id;
+    private string $code;
     private string $name;
-    private int $searchable;
-    private int $filterable;
+    private bool $searchable;
+    private bool $filterable;
     private string $description;
     private string $backendModel;
     private string $frontendInput;
@@ -21,6 +22,7 @@ final class AttributeResponse
     public function __construct(readonly Attribute $attribute)
     {
         $this->id = $attribute->id()->value();
+        $this->code = $attribute->code()->value();
         $this->name = $attribute->name()->value();
         $this->searchable = $attribute->searchable()->value();
         $this->filterable = $attribute->filterable()->value();
@@ -36,17 +38,22 @@ final class AttributeResponse
         return $this->id;
     }
 
+    public function code(): string
+    {
+        return $this->code;
+    }
+
     public function name(): string
     {
         return $this->name;
     }
 
-    public function searchable(): int
+    public function searchable(): bool
     {
         return $this->searchable;
     }
 
-    public function filterable(): int
+    public function filterable(): bool
     {
         return $this->filterable;
     }
@@ -80,6 +87,7 @@ final class AttributeResponse
     {
         return [
             'id' => $this->id(),
+            'code' => $this->code(),
             'name' => $this->name(),
             'searchable' => $this->searchable(),
             'filterable' => $this->filterable(),

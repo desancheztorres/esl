@@ -26,20 +26,17 @@ final class SaveAttributesHandler
     public function __construct(
         private readonly AttributeRepository $repository,
         private readonly IdStringGenerator $idStringGenerator
-    )
-    {
+    ) {
     }
 
     public function __invoke(CreateAttributeRequest $request): AttributeResponse
     {
-        $code = $request->code();
-
         $attribute = Attribute::create(
             id: new AttributeId($this->idStringGenerator->generate()),
-            code: new AttributeCode($code),
-            name: new AttributeName($code, $request->name()),
-            searchable: new AttributeSearchable((int) $request->searchable()),
-            filterable: new AttributeFilterable((int) $request->filterable()),
+            code: new AttributeCode($request->code()),
+            name: new AttributeName($request->name()),
+            searchable: new AttributeSearchable($request->searchable()),
+            filterable: new AttributeFilterable($request->filterable()),
             description: new AttributeDescription($request->description()),
             backendType: new AttributeBackendType($request->backendType()),
             backendModel: new AttributeBackendModel($request->backendModel()),

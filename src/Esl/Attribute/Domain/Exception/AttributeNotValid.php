@@ -7,7 +7,7 @@ namespace Arcmedia\Esl\Attribute\Domain\Exception;
 use RuntimeException;
 use Throwable;
 
-final class ProductAttributeNotFound extends RuntimeException
+final class AttributeNotValid extends RuntimeException
 {
     public function __construct($message = "", $code = 0, Throwable $previous = null)
     {

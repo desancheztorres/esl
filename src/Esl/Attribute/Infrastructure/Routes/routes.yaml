@@ -7,3 +7,8 @@ attribute.saveAttribute:
   path: /attributes
   controller: 'esl.controller.attributes.saveAttributes'
   methods: [POST]
+
+attribute.importAttributes:
+  path: /attributes-import
+  controller: 'esl.controller.attributes.importAttributes'
+  methods: [POST]

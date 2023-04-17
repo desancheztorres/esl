@@ -12,8 +12,8 @@ final class Attribute
         private readonly string $id,
         private readonly string $code,
         private readonly string $name,
-        private readonly int $is_searchable,
-        private readonly int $is_filterable,
+        private readonly bool $is_searchable,
+        private readonly bool $is_filterable,
         private readonly string $description,
         private readonly string $backend_type,
         private readonly string $backend_model,
@@ -41,12 +41,12 @@ final class Attribute
         return $this->name;
     }
 
-    public function searchable(): int
+    public function searchable(): bool
     {
         return $this->is_searchable;
     }
 
-    public function filterable(): int
+    public function filterable(): bool
     {
         return $this->is_filterable;
     }
@@ -81,12 +81,12 @@ final class Attribute
         return $this->source_model;
     }
 
-    public function created_at(): DateTimeInterface
+    public function createdAt(): DateTimeInterface
     {
         return $this->created_at;
     }
 
-    public function updated_at(): DateTimeInterface
+    public function updatedAt(): DateTimeInterface
     {
         return $this->updated_at;
     }

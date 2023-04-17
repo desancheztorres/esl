@@ -9,16 +9,15 @@ final class CreateAttributeRequest
     public function __construct(
         private readonly string $code,
         private readonly string $name,
-        private readonly string $searchable,
-        private readonly string $filterable,
+        private readonly bool $searchable,
+        private readonly bool $filterable,
         private readonly string $description,
         private readonly string $backendType,
         private readonly string $backendModel,
         private readonly string $frontendInput,
         private readonly string $frontendModel,
         private readonly string $sourceModel
-    )
-    {
+    ) {
     }
 
     public function code(): string
@@ -31,12 +30,12 @@ final class CreateAttributeRequest
         return $this->name;
     }
 
-    public function searchable(): string
+    public function searchable(): bool
     {
         return $this->searchable;
     }
 
-    public function filterable(): string
+    public function filterable(): bool
     {
         return $this->filterable;
     }

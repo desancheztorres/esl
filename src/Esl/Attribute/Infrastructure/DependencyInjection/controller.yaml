@@ -10,3 +10,9 @@ services:
     arguments:
       - '@attribute.command.attribute.saveAttributesHandler'
     public: true
+
+  esl.controller.attributes.importAttributes:
+    class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\ImportAttributesXlsxFile
+    arguments:
+      - '@attribute.command.attribute.saveAttributesHandler'
+    public: true
