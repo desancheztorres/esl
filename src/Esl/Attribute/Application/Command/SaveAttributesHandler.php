@@ -56,7 +56,7 @@ final class SaveAttributesHandler
     private function ensureAttributeDoesntExist(string $code): void
     {
         $attributeCode = new AttributeCode($code);
-        $existingAttribute = $this->repository->findByCriteria($attributeCode);
+        $existingAttribute = $this->repository->search($attributeCode);
 
         if (null !== $existingAttribute) {
             throw new AttributeAlreadyExists("Attribute code {$attributeCode->value()} already exists in database.");

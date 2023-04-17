@@ -48,7 +48,7 @@ final class DoctrineAttributeRepository extends DoctrineRepository implements At
         return $attributeCollection;
     }
 
-    public function findByCriteria(AttributeCode $code): ?Attribute
+    public function search(AttributeCode $code): ?Attribute
     {
         $attribute = $this->repository->findOneBy(['code' => $code->value()]);
 

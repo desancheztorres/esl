@@ -25,7 +25,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class ImportAttributesXlsxFile
 {
-    private array $attributes = [];
     private array $columns = [];
     private int $startRow = 1;
     private string $startColumn = "A";
@@ -117,11 +116,6 @@ final class ImportAttributesXlsxFile
                 var_dump("Error while importing attribute from file in row {$row->getRowIndex()}: {$e->getMessage()}");
             }
         }
-    }
-
-    private function attributes(): array
-    {
-        return array_map("unserialize", array_unique(array_map("serialize", $this->attributes)));
     }
 
     /**

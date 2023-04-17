@@ -1,10 +1,10 @@
 services:
-  attribute.query.attribute.getAttributesHandler:
+  attribute.query.getAttributesHandler:
     class: Arcmedia\Esl\Attribute\Application\Query\GetAttributesHandler
     arguments:
       - '@attribute.repository.doctrineAttributeRepository'
 
-  attribute.command.attribute.saveAttributesHandler:
+  attribute.command.saveAttributesHandler:
     class: Arcmedia\Esl\Attribute\Application\Command\SaveAttributesHandler
     arguments:
       - '@attribute.repository.doctrineAttributeRepository'

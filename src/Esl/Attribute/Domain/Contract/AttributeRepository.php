@@ -11,6 +11,6 @@ use Arcmedia\Esl\Attribute\Domain\ValueObject\AttributeCode;
 interface AttributeRepository
 {
     public function findAll(): AttributeCollection;
-    public function findByCriteria(AttributeCode $code): ?Attribute;
+    public function search(AttributeCode $code): ?Attribute;
     public function save(Attribute $attribute): void;
 }

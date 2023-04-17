@@ -2,17 +2,17 @@ services:
   esl.controller.attributes.getAttributes:
     class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\GetAttributeController
     arguments:
-      - '@attribute.query.attribute.getAttributesHandler'
+      - '@attribute.query.getAttributesHandler'
     public: true
 
   esl.controller.attributes.saveAttributes:
     class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\SaveAttributeController
     arguments:
-      - '@attribute.command.attribute.saveAttributesHandler'
+      - '@attribute.command.saveAttributesHandler'
     public: true
 
   esl.controller.attributes.importAttributes:
     class: Arcmedia\Esl\Attribute\Infrastructure\Ui\Http\Controller\ImportAttributesXlsxFile
     arguments:
-      - '@attribute.command.attribute.saveAttributesHandler'
+      - '@attribute.command.saveAttributesHandler'
     public: true
